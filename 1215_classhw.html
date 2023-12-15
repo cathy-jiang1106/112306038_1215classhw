@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        var guess = 0;
+        var rand = Math.floor((Math.random()*10)+1);
+        while(guess!=rand){
+            var guess = window.prompt("Guess a number");
+            var guess = parseInt(guess);
+            if (isNaN(guess)||guess==0) {
+                alert("Please enter a valid number.");
+                continue; 
+            }
+            else if(guess==rand){
+                alert("Correct answer!!!")
+                var play = window.prompt("Do you want to play again?")
+                if(play=="Yes" || play=="yes"){
+                    rand = Math.floor((Math.random()*10)+1);
+                }
+                else
+                    continue;
+            }
+            else{
+                var guess = window.prompt("Guess a number");
+            }
+        }
+    </script>
+</body>
